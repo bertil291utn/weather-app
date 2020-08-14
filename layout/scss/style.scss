@@ -1,23 +1,6 @@
 /* stylelint-disable csstree/validator */
 /* stylelint-disable declaration-colon-newline-after */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-$shower-rain-deg-color: #f6f6f6;
-$shower-rain-text-color: #070707;
-$shower-rain-solid-bg-color: #d4d7dd;
-$shower-rain-input-text-color: #9b9b9b;
-$raining-deg-color: #f4eeff;
-$raining-text-color: #424874;
-$raining-solid-bg-color: #dcd6f7;
-$raining-input-text-color: #a6b1e1;
-$few-clouds-deg-color: #fffa67;
-$few-clouds-text-color: #4f4017;
-$few-clouds-solid-bg-color: #ffcd60;
-$few-clouds-input-text-color: #b58e22;
-$sunny-deg-color: #f7c5a8;
-$sunny-text-color: #662806;
-$sunny-solid-bg-color: #ff9a76;
-$sunny-input-text-color: #b3450b;
+@import 'font-color';
 
 body {
   font: {
