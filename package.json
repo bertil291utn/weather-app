@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --progress -p --mode production",
     "build:dev": "webpack --mode development",
+    "scss": "node-sass --watch layout/scss -o layout/css",
     "start": "webpack-dev-server --open"
   },
   "keywords": [],
@@ -22,6 +23,9 @@
     "eslint-plugin-import": "^2.20.2",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.3",
     "style-loader": "^1.2.1",
     "stylelint": "^13.3.3",
     "stylelint-config-standard": "^20.0.0",
@@ -33,6 +37,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "css-reset-and-normalize": "^2.1.0"
+    "css-reset-and-normalize-sass": "^0.1.2"
   }
 }

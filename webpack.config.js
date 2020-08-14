@@ -13,8 +13,8 @@ const javascriptRules = {
 };
 
 const cssRules = {
-  test: /\.css$/,
-  use: ['style-loader', 'css-loader'],
+  test: /\.s[ac]ss|\.css$/i,
+  use: ['style-loader', 'css-loader', 'sass-loader'],
 };
 
 const imagesRules = {
