@@ -42,6 +42,30 @@ body {
   position: relative;
 }
 
+.svg-icon {
+  position: relative;
+  right: 1.5rem;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+.input input {
+  border-radius: 1rem;
+  border: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  height: 1.5rem;
+  letter-spacing: 0.09rem;
+  padding-left: 1rem;
+  text-transform: capitalize;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 #raining {
   &::before {
     background: $raining-deg-color;
@@ -50,6 +74,19 @@ body {
   background: url(https://images.unsplash.com/photo-1589136329197-f8396702a94e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE1NzQ1NX0)
     center / cover;
   color: $raining-text-color;
+
+  .svg-icon {
+    fill: $raining-input-text-color;
+  }
+
+  .input input {
+    background-color: $raining-solid-bg-color;
+    color: $raining-input-text-color;
+
+    &::placeholder {
+      color: $raining-input-text-color;
+    }
+  }
 }
 
 #sunny {
@@ -60,6 +97,19 @@ body {
   background: url(https://images.unsplash.com/photo-1589136329197-f8396702a94e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE1NzQ1NX0)
     center / cover;
   color: $sunny-text-color;
+
+  .svg-icon {
+    fill: $sunny-input-text-color;
+  }
+
+  .input input {
+    background-color: $sunny-solid-bg-color;
+    color: $sunny-input-text-color;
+
+    &::placeholder {
+      color: $sunny-input-text-color;
+    }
+  }
 }
 
 #few-clouds {
@@ -70,6 +120,19 @@ body {
   background: url(https://images.unsplash.com/photo-1589136329197-f8396702a94e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE1NzQ1NX0)
     center / cover;
   color: $few-clouds-text-color;
+
+  .svg-icon {
+    fill: $few-clouds-input-text-color;
+  }
+
+  .input input {
+    background-color: $few-clouds-solid-bg-color;
+    color: $few-clouds-input-text-color;
+
+    &::placeholder {
+      color: $few-clouds-input-text-color;
+    }
+  }
 }
 
 #shower-rain {
@@ -80,4 +143,33 @@ body {
   background: url(https://images.unsplash.com/photo-1589136329197-f8396702a94e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE1NzQ1NX0)
     center / cover;
   color: $shower-rain-text-color;
+
+  .svg-icon {
+    fill: $shower-rain-input-text-color;
+  }
+
+  .input input {
+    background-color: $shower-rain-solid-bg-color;
+    color: $shower-rain-input-text-color;
+
+    &::placeholder {
+      color: $shower-rain-input-text-color;
+    }
+  }
+}
+
+.input {
+  position: relative;
+  bottom: 50vh;
+  left: 35vw;
+  display: flex;
+  align-items: center;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 768px) {
+  .input {
+    left: 0;
+  }
 }

@@ -28,26 +28,86 @@ body {
   margin: auto;
   position: relative; }
 
+.svg-icon {
+  position: relative;
+  right: 1.5rem;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem; }
+
+.input input {
+  border-radius: 1rem;
+  border: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  height: 1.5rem;
+  letter-spacing: 0.09rem;
+  padding-left: 1rem;
+  text-transform: capitalize; }
+  .input input:focus {
+    outline: none; }
+
 #raining {
   background: url(https://images.unsplash.com/photo-1589136329197-f8396702a94e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE1NzQ1NX0) center/cover;
   color: #424874; }
   #raining::before {
     background: #f4eeff; }
+  #raining .svg-icon {
+    fill: #a6b1e1; }
+  #raining .input input {
+    background-color: #dcd6f7;
+    color: #a6b1e1; }
+    #raining .input input::placeholder {
+      color: #a6b1e1; }
 
 #sunny {
   background: url(https://images.unsplash.com/photo-1589136329197-f8396702a94e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE1NzQ1NX0) center/cover;
   color: #662806; }
   #sunny::before {
     background: #f7c5a8; }
+  #sunny .svg-icon {
+    fill: #b3450b; }
+  #sunny .input input {
+    background-color: #ff9a76;
+    color: #b3450b; }
+    #sunny .input input::placeholder {
+      color: #b3450b; }
 
 #few-clouds {
   background: url(https://images.unsplash.com/photo-1589136329197-f8396702a94e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE1NzQ1NX0) center/cover;
   color: #4f4017; }
   #few-clouds::before {
     background: #fffa67; }
+  #few-clouds .svg-icon {
+    fill: #b58e22; }
+  #few-clouds .input input {
+    background-color: #ffcd60;
+    color: #b58e22; }
+    #few-clouds .input input::placeholder {
+      color: #b58e22; }
 
 #shower-rain {
   background: url(https://images.unsplash.com/photo-1589136329197-f8396702a94e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE1NzQ1NX0) center/cover;
   color: #070707; }
   #shower-rain::before {
     background: #f6f6f6; }
+  #shower-rain .svg-icon {
+    fill: #9b9b9b; }
+  #shower-rain .input input {
+    background-color: #d4d7dd;
+    color: #9b9b9b; }
+    #shower-rain .input input::placeholder {
+      color: #9b9b9b; }
+
+.input {
+  position: relative;
+  bottom: 50vh;
+  left: 35vw;
+  display: flex;
+  align-items: center; }
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+  .input {
+    left: 0; } }
