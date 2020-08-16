@@ -20,7 +20,7 @@
               <p class="title">Los Angeles</p>
               <div class="weather-content">
                 <div class="weather-data">
-                  <div class="date">May 23, 2019</div>
+                  <div class="date" id="display-date">May 23, 2019</div>
                   <div class="icon">
                     <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="icon" width="50">
                     <span class="weather-station">Sunny</span>
@@ -67,6 +67,32 @@
     const fahrenheitButton = document.querySelector('#fahrenheit')
     const searchButton = document.querySelector('#search-button')
     const searchInput = document.querySelector('#search-input')
+    const displayDateLabel = document.querySelector('#display-date')
+
+    const displayDate = () => {
+      const months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+      ]
+      const d = new Date()
+      const year = d.getFullYear()
+      const month = months[d.getMonth()]
+      const day = d.getDate()
+
+      return `${month} ${day}, ${year}`
+    }
+
+    displayDateLabel.innerHTML = displayDate()
 
     searchButton.addEventListener('click', (e) => {
       console.log(searchInput.value);
