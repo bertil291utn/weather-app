@@ -1,28 +1,28 @@
-const displayDate = () => {
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-  const d = new Date();
-  const year = d.getFullYear();
-  const month = months[d.getMonth()];
-  const day = d.getDate();
+const dataComponent = (() => {
+  const displayDate = () => {
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = months[d.getMonth()];
+    const day = d.getDate();
 
-  return `${month} ${day}, ${year}`;
-};
+    return `${month} ${day}, ${year}`;
+  };
 
-const dataComponent = {
-  dataRender: async ({
+  const dataRender = async ({
     cityName,
     iconSrc,
     stationName,
@@ -63,9 +63,9 @@ const dataComponent = {
       </div>
     </div>
   </div>
-`,
+`;
 
-  afterRender: async () => {
+  const afterRender = async () => {
     const centigradeButton = document.querySelector('#centigrade');
     const fahrenheitButton = document.querySelector('#fahrenheit');
 
@@ -80,6 +80,8 @@ const dataComponent = {
       e.srcElement.classList.remove('inactive');
       fahrenheitButton.classList.add('inactive');
     });
-  },
-};
+  };
+
+  return { afterRender, dataRender };
+})();
 export default dataComponent;

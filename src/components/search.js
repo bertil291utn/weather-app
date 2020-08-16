@@ -1,7 +1,7 @@
 import IconSvg from '../assets/icons.svg';
 
-const searchComponent = {
-  searchInputRender: async () => `
+const searchComponent = (() => {
+  const searchInputRender = async () => `
   <div class="input">
     <div class="input-container">
       <input type="text" id="search-input" placeholder="City" autocomplete="off">
@@ -10,9 +10,9 @@ const searchComponent = {
       </svg>
     </div>
   </div>
-`,
+`;
 
-  afterRender: async () => {
+  const afterRender = async () => {
     const searchButton = document.querySelector('#search-button');
     const searchInput = document.querySelector('#search-input');
 
@@ -20,7 +20,8 @@ const searchComponent = {
       console.log(searchInput.value);
       searchInput.value = '';
     });
-  },
-};
+  };
+  return { afterRender, searchInputRender };
+})();
 
 export default searchComponent;
