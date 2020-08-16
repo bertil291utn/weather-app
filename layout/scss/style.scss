@@ -7,13 +7,16 @@ body {
     family: 'Poppins', sans-serif;
     weight: 300;
   }
+
+  overflow-x: hidden;
 }
 
 .title {
   font: {
-    weight: 700;
-    size: 3rem;
+    size: 2.25rem;
   }
+
+  margin: 1rem 0;
 }
 
 .subtitle {
@@ -33,21 +36,28 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0.7;
+    opacity: 0.8;
   }
 }
 
 .card-container {
-  margin: auto;
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr 3fr 0.5fr;
+}
+
+.card-content {
+  font-weight: 500;
+  margin: 20vh 10rem;
 }
 
 .svg-icon {
+  cursor: pointer;
+  height: 1rem;
+  margin-right: 0.5rem;
   position: relative;
   right: 1.5rem;
   width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
 }
 
 .input input {
@@ -64,6 +74,10 @@ body {
   &:focus {
     outline: none;
   }
+}
+
+hr {
+  border: 0.1px solid;
 }
 
 #raining {
@@ -86,6 +100,10 @@ body {
     &::placeholder {
       color: $raining-input-text-color;
     }
+  }
+
+  hr {
+    border-color: $raining-text-color;
   }
 }
 
@@ -110,6 +128,10 @@ body {
       color: $sunny-input-text-color;
     }
   }
+
+  hr {
+    border-color: $sunny-text-color;
+  }
 }
 
 #few-clouds {
@@ -132,6 +154,10 @@ body {
     &::placeholder {
       color: $few-clouds-input-text-color;
     }
+  }
+
+  hr {
+    border-color: $few-clouds-text-color;
   }
 }
 
@@ -156,20 +182,94 @@ body {
       color: $shower-rain-input-text-color;
     }
   }
+
+  hr {
+    border-color: $shower-rain-text-color;
+  }
 }
 
 .input {
-  position: relative;
-  bottom: 50vh;
-  left: 35vw;
+  margin: 2rem auto;
+}
+
+.input-container {
   display: flex;
   align-items: center;
 }
 
+.weather-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 7vw;
+  margin: 2rem 0;
+}
+
+.weather-data {
+  margin-top: 1rem;
+
+  .date {
+    font-size: 0.9rem;
+  }
+
+  .weather-station {
+    font-weight: 600;
+  }
+}
+
+.degrees {
+  font-size: 4rem;
+  text-align: right;
+}
+
+.additional-info {
+  margin-top: 2rem;
+
+  h3 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+  }
+}
+
+.additional-info-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+
+  p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
 /* MEDIA QUERIES */
 
+@media only screen and (max-width: 1024px) {
+  .card-content {
+    margin: 20vh 5vh;
+  }
+}
+
 @media only screen and (max-width: 768px) {
-  .input {
-    left: 0;
+  .card-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .weather-content {
+    height: 15vw;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .weather-content {
+    height: 20vw;
   }
 }
