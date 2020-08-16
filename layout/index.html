@@ -11,7 +11,7 @@
 
 <body>
   <main>
-    <div class="card" id="sunny">
+    <div class="card" id="few-clouds">
       <div class="card-container">
         <div></div>
         <div class="card-content">
@@ -25,16 +25,24 @@
                   <span class="weather-station">Sunny</span>
                 </div>
               </div>
-              <div class="degrees">78&deg;</div>
+              <div class="degrees-container">
+                <div class="degrees">78&deg;</div>
+                <span id="centigrade">&deg; C</span>
+                <span class="inactive"> / </span>
+                <span class="inactive" id="fahrenheit">&deg; F</span>
+              </div>
             </div>
           </div>
           <hr>
           <div class="additional-info">
             <h3 class="additional-info-title">Additional info</h3>
             <div class="additional-info-container">
-              <div class="insolation">Insolation <p>33%</p></div>
-              <div class="humidity">Humidity <p>60%</p></div>
-              <div class="wind">Wind <p>18km/h</p></div>
+              <div class="insolation">Insolation <p>33%</p>
+              </div>
+              <div class="humidity">Humidity <p>60%</p>
+              </div>
+              <div class="wind">Wind <p>18km/h</p>
+              </div>
             </div>
           </div>
           <!-- <h1 class="title">A title</h1>
@@ -54,6 +62,22 @@
       </div>
     </div>
   </main>
+  <script>
+    const centigradeButton = document.querySelector('#centigrade')
+    const fahrenheitButton = document.querySelector('#fahrenheit')
+    
+    fahrenheitButton.addEventListener('click', (e) => {
+      if (!e.srcElement.classList.contains("inactive")) return;
+      e.srcElement.classList.remove('inactive')
+      centigradeButton.classList.add('inactive')
+    });
+
+    centigradeButton.addEventListener('click', (e) => {
+      if (!e.srcElement.classList.contains("inactive")) return;
+      e.srcElement.classList.remove('inactive')
+      fahrenheitButton.classList.add('inactive')
+    });
+  </script>
 </body>
 
 </html>

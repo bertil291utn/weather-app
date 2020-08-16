@@ -105,6 +105,10 @@ hr {
   hr {
     border-color: $raining-text-color;
   }
+
+  .inactive {
+    color: $raining-input-text-color;
+  }
 }
 
 #sunny {
@@ -131,6 +135,10 @@ hr {
 
   hr {
     border-color: $sunny-text-color;
+  }
+
+  .inactive {
+    color: $sunny-input-text-color;
   }
 }
 
@@ -159,6 +167,10 @@ hr {
   hr {
     border-color: $few-clouds-text-color;
   }
+
+  .inactive {
+    color: $few-clouds-input-text-color;
+  }
 }
 
 #shower-rain {
@@ -185,6 +197,10 @@ hr {
 
   hr {
     border-color: $shower-rain-text-color;
+  }
+
+  .inactive {
+    color: $shower-rain-input-text-color;
   }
 }
 
@@ -216,9 +232,17 @@ hr {
   }
 }
 
+.degrees-container {
+  text-align: right;
+
+  span {
+    cursor: pointer;
+  }
+}
+
 .degrees {
   font-size: 4rem;
-  text-align: right;
+  margin-bottom: 1rem;
 }
 
 .additional-info {

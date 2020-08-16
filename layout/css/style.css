@@ -72,6 +72,8 @@ hr {
       color: #a6b1e1; }
   #raining hr {
     border-color: #424874; }
+  #raining .inactive {
+    color: #a6b1e1; }
 
 #sunny {
   background: url(https://images.unsplash.com/photo-1589136329197-f8396702a94e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE1NzQ1NX0) center/cover;
@@ -87,6 +89,8 @@ hr {
       color: #b3450b; }
   #sunny hr {
     border-color: #662806; }
+  #sunny .inactive {
+    color: #b3450b; }
 
 #few-clouds {
   background: url(https://images.unsplash.com/photo-1589136329197-f8396702a94e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE1NzQ1NX0) center/cover;
@@ -102,6 +106,8 @@ hr {
       color: #b58e22; }
   #few-clouds hr {
     border-color: #4f4017; }
+  #few-clouds .inactive {
+    color: #b58e22; }
 
 #shower-rain {
   background: url(https://images.unsplash.com/photo-1589136329197-f8396702a94e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE1NzQ1NX0) center/cover;
@@ -117,6 +123,8 @@ hr {
       color: #9b9b9b; }
   #shower-rain hr {
     border-color: #070707; }
+  #shower-rain .inactive {
+    color: #9b9b9b; }
 
 .input {
   margin: 2rem auto; }
@@ -138,9 +146,14 @@ hr {
   .weather-data .weather-station {
     font-weight: 600; }
 
+.degrees-container {
+  text-align: right; }
+  .degrees-container span {
+    cursor: pointer; }
+
 .degrees {
   font-size: 4rem;
-  text-align: right; }
+  margin-bottom: 1rem; }
 
 .additional-info {
   margin-top: 2rem; }
