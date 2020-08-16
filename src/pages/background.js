@@ -1,5 +1,6 @@
 const sanitizeNames = (name) => name.trim().toLowerCase().replace(/\s/g, '-');
 
+
 const displayWeatherString = (stringWeather) => {
   switch (stringWeather) {
     case 'clear sky':
@@ -18,9 +19,9 @@ const mainPage = (dataComponent, searchComponent, time) => `
     <div class="card-container">
       <div></div>
       <div class="card-content">
-        ${dataComponent()}
+        ${dataComponent}
       </div>
-      ${searchComponent()}
+      ${searchComponent}
     </div>
   </div>
 `;

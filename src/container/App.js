@@ -4,12 +4,12 @@ import mainPage from '../pages/background';
 import dataComponent from '../components/dataComp';
 import searchComponent from '../components/search';
 
-const App = async () => {
+const App = () => {
   const main = document.createElement('main');
   main.setAttribute('id', 'main');
 
   main.innerHTML = mainPage(
-    await dataComponent.dataRender({
+    dataComponent.dataRender({
       cityName: 'Los Angeles',
       iconSrc: '04d',
       stationName: 'Sunny',
@@ -18,11 +18,11 @@ const App = async () => {
       humidity: '16',
       wind: '30',
     }),
-    await searchComponent.dataRender(),
+    searchComponent.searchInputRender(),
     'few-clouds'
   );
-  await dataComponent.afterRender();
-  await searchComponent.afterRender();
+  dataComponent.afterRender();
+  searchComponent.afterRender();
 
   return main;
 };

@@ -22,7 +22,7 @@ const dataComponent = (() => {
     return `${month} ${day}, ${year}`;
   };
 
-  const dataRender = async ({
+  const dataRender = ({
     cityName,
     iconSrc,
     stationName,
@@ -65,21 +65,21 @@ const dataComponent = (() => {
   </div>
 `;
 
-  const afterRender = async () => {
-    const centigradeButton = document.querySelector('#centigrade');
-    const fahrenheitButton = document.querySelector('#fahrenheit');
+  const afterRender = () => {
+    // const centigradeButton = document.querySelector('#centigrade');
+    // const fahrenheitButton = document.querySelector('#fahrenheit');
 
-    fahrenheitButton.addEventListener('click', (e) => {
-      if (!e.srcElement.classList.contains('inactive')) return;
-      e.srcElement.classList.remove('inactive');
-      centigradeButton.classList.add('inactive');
-    });
+    // fahrenheitButton.addEventListener('click', (e) => {
+    //   if (!e.srcElement.classList.contains('inactive')) return;
+    //   e.srcElement.classList.remove('inactive');
+    //   centigradeButton.classList.add('inactive');
+    // });
 
-    centigradeButton.addEventListener('click', (e) => {
-      if (!e.srcElement.classList.contains('inactive')) return;
-      e.srcElement.classList.remove('inactive');
-      fahrenheitButton.classList.add('inactive');
-    });
+    // centigradeButton.addEventListener('click', (e) => {
+    //   if (!e.srcElement.classList.contains('inactive')) return;
+    //   e.srcElement.classList.remove('inactive');
+    //   fahrenheitButton.classList.add('inactive');
+    // });
   };
 
   return { afterRender, dataRender };
