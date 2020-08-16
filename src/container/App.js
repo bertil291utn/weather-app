@@ -21,8 +21,7 @@ const App = () => {
     searchComponent.searchInputRender(),
     'few-clouds'
   );
-  dataComponent.afterRender();
-  searchComponent.afterRender();
+ 
 
   return main;
 };

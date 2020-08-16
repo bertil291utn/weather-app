@@ -13,13 +13,13 @@ const searchComponent = (() => {
 `;
 
   const afterRender = () => {
-    // const searchButton = document.querySelector('#search-button');
-    // const searchInput = document.querySelector('#search-input');
+    const searchButton = document.querySelector('#search-button');
+    const searchInput = document.querySelector('#search-input');
 
-    // searchButton.addEventListener('click', () => {
-    //   console.log(searchInput.value);
-    //   searchInput.value = '';
-    // });
+    searchButton.addEventListener('click', () => {
+      console.log(searchInput.value);
+      searchInput.value = '';
+    });
   };
   return { afterRender, searchInputRender };
 })();
