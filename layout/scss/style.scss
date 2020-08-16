@@ -48,7 +48,11 @@ body {
 
 .card-content {
   font-weight: 500;
-  margin: 20vh 10rem;
+  padding: 20vh 10rem;
+}
+
+.data-content{
+
 }
 
 .svg-icon {
@@ -277,7 +281,7 @@ hr {
 
 @media only screen and (max-width: 1024px) {
   .card-content {
-    margin: 20vh 5vh;
+    padding: 20vh 5vh;
   }
 }
 

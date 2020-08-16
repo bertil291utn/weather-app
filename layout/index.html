@@ -15,45 +15,45 @@
       <div class="card-container">
         <div></div>
         <div class="card-content">
-          <div class="weather-city">
-            <p class="title">Los Angeles</p>
-            <div class="weather-content">
-              <div class="weather-data">
-                <div class="date">May 23, 2019</div>
-                <div class="icon">
-                  <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="icon" width="50">
-                  <span class="weather-station">Sunny</span>
+          <div class="data-content">
+            <div class="weather-city">
+              <p class="title">Los Angeles</p>
+              <div class="weather-content">
+                <div class="weather-data">
+                  <div class="date">May 23, 2019</div>
+                  <div class="icon">
+                    <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="icon" width="50">
+                    <span class="weather-station">Sunny</span>
+                  </div>
+                </div>
+                <div class="degrees-container">
+                  <div class="degrees">78&deg;</div>
+                  <span id="centigrade">&deg; C</span>
+                  <span class="inactive"> / </span>
+                  <span class="inactive" id="fahrenheit">&deg; F</span>
                 </div>
               </div>
-              <div class="degrees-container">
-                <div class="degrees">78&deg;</div>
-                <span id="centigrade">&deg; C</span>
-                <span class="inactive"> / </span>
-                <span class="inactive" id="fahrenheit">&deg; F</span>
+            </div>
+            <hr>
+            <div class="additional-info">
+              <h3 class="additional-info-title">Additional info</h3>
+              <div class="additional-info-container">
+                <div class="clouds">Cloudiness <p>33%</p>
+                </div>
+                <div class="humidity">Humidity <p>60%</p>
+                </div>
+                <div class="wind">Wind <p>18m/s</p>
+                </div>
               </div>
             </div>
           </div>
-          <hr>
-          <div class="additional-info">
-            <h3 class="additional-info-title">Additional info</h3>
-            <div class="additional-info-container">
-              <div class="insolation">Insolation <p>33%</p>
-              </div>
-              <div class="humidity">Humidity <p>60%</p>
-              </div>
-              <div class="wind">Wind <p>18km/h</p>
-              </div>
-            </div>
-          </div>
-          <!-- <h1 class="title">A title</h1>
-          <h3 class="subtitle">A subtitle</h3> -->
 
         </div>
 
         <div class="input">
           <div class="input-container">
-            <input type="text" id="country" placeholder="City" autocomplete="off">
-            <svg class="svg-icon">
+            <input type="text" id="search-input" placeholder="City" autocomplete="off">
+            <svg class="svg-icon" id="search-button">
               <use href="./assets/icons.svg#search-symbol"></use>
             </svg>
           </div>
@@ -65,7 +65,14 @@
   <script>
     const centigradeButton = document.querySelector('#centigrade')
     const fahrenheitButton = document.querySelector('#fahrenheit')
-    
+    const searchButton = document.querySelector('#search-button')
+    const searchInput = document.querySelector('#search-input')
+
+    searchButton.addEventListener('click', (e) => {
+      console.log(searchInput.value);
+      searchInput.value = '';
+    });
+
     fahrenheitButton.addEventListener('click', (e) => {
       if (!e.srcElement.classList.contains("inactive")) return;
       e.srcElement.classList.remove('inactive')

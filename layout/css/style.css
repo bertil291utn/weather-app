@@ -32,7 +32,7 @@ body {
 
 .card-content {
   font-weight: 500;
-  margin: 20vh 10rem; }
+  padding: 20vh 10rem; }
 
 .svg-icon {
   cursor: pointer;
@@ -179,7 +179,7 @@ hr {
 /* MEDIA QUERIES */
 @media only screen and (max-width: 1024px) {
   .card-content {
-    margin: 20vh 5vh; } }
+    padding: 20vh 5vh; } }
 
 @media only screen and (max-width: 768px) {
   .card-container {
