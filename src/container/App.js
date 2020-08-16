@@ -1,23 +1,27 @@
-
 import 'css-reset-and-normalize';
 import '../styles/style.scss';
-
-
+import mainPage from '../pages/background';
+import dataComponent from '../components/dataComp';
+import searchComponent from '../components/search';
 
 const App = () => {
   const main = document.createElement('main');
   main.setAttribute('id', 'main');
 
-  main.innerHTML=`
-    <div class="card" id="shower-rain">
-      <div class="card-container">
-        <div class="card-content">
-          <h1 class="title">A title</h1>
-          <h3 class="subtitle">A subtitle</h3>
-        </div>
-      </div>
-    </div>
-  `;
+  main.innerHTML = mainPage(
+    dataComponent.dataRender({
+      cityName: 'Los Angeles',
+      iconSrc: '04d',
+      stationName: 'Sunny',
+      degrees: '78',
+      cloudiness: '30',
+      humidity: '16',
+      wind: '30',
+    }),
+    searchComponent.searchInputRender(),
+    'few-clouds'
+  );
+ 
 
   return main;
 };
