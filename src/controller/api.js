@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 const API = (() => {
   const getDataByIpCheck = async () => {
     const response = await fetch(

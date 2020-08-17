@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable object-curly-newline */
 import IconSvg from '../assets/icons.svg';
 import API from '../controller/api';
 import mainPage from '../pages/background';

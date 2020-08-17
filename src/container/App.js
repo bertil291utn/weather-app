@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable object-curly-newline */
 import 'css-reset-and-normalize';
 import '../styles/style.scss';
