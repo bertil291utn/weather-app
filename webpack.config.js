@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const javascriptRules = {
   test: /\.m?js$/,
@@ -24,11 +25,12 @@ const imagesRules = {
 
 module.exports = {
   mode: 'development',
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     filename: 'main.js',
   },
   module: {
-    rules: [cssRules, imagesRules, javascriptRules],
+    rules: [cssRules, javascriptRules, imagesRules],
   },
   devtool: 'inline-source-map',
   plugins: [
@@ -37,5 +39,6 @@ module.exports = {
       template: './public/index.html',
       filename: './index.html',
     }),
+    new Dotenv(),
   ],
 };
