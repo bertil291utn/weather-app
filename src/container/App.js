@@ -39,7 +39,7 @@ const App = async () => {
       countryFlag: location.country_flag,
       iconSrc: weather[0].icon,
       stationName: weather[0].description,
-      degrees: main.temp,
+      degrees: Math.round(main.temp),
       cloudiness: clouds.all,
       humidity: main.humidity,
       wind: wind.speed,

@@ -69,7 +69,7 @@ const dataComponent = (() => {
   </div>
 `;
 
-  const celsiusToFahrenheit = (celsiusDegree) => (celsiusDegree * 9) / 5 + 32;
+  const celsiusToFahrenheit = (celsiusDegree) => Math.round((celsiusDegree * 9) / 5 + 32);
 
   const afterRender = () => {
     const centigradeButton = document.querySelector('#centigrade');
