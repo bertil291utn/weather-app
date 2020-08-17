@@ -47,7 +47,7 @@ const dataComponent = (() => {
           </div>
         </div>
         <div class="degrees-container">
-          <div class="degrees">${degrees}&deg;</div>
+          <div class="degrees"><span class="degree-content">${degrees}</span>&deg;</div>
           <span id="centigrade">&deg; C</span>
           <span class="inactive"> / </span>
           <span class="inactive" id="fahrenheit">&deg; F</span>
@@ -69,20 +69,27 @@ const dataComponent = (() => {
   </div>
 `;
 
+  const celsiusToFahrenheit = (celsiusDegree) => (celsiusDegree * 9) / 5 + 32;
+
   const afterRender = () => {
     const centigradeButton = document.querySelector('#centigrade');
     const fahrenheitButton = document.querySelector('#fahrenheit');
+    const degreesElement = document.querySelector('.degree-content');
+    const centigradeDegree = +degreesElement.textContent;
 
     fahrenheitButton.addEventListener('click', (e) => {
       if (!e.srcElement.classList.contains('inactive')) return;
       e.srcElement.classList.remove('inactive');
       centigradeButton.classList.add('inactive');
+      celsiusToFahrenheit(+degreesElement.textContent);
+      degreesElement.innerHTML = celsiusToFahrenheit(+degreesElement.textContent);
     });
 
     centigradeButton.addEventListener('click', (e) => {
       if (!e.srcElement.classList.contains('inactive')) return;
       e.srcElement.classList.remove('inactive');
       fahrenheitButton.classList.add('inactive');
+      degreesElement.innerHTML = centigradeDegree;
     });
   };
 

@@ -8,12 +8,7 @@ import API from '../controller/api';
 const apiResponse = async () => {
   const { city, location } = await API.getDataByIpCheck();
   const { main, weather, wind, clouds } = await API.weatherDataByCity(city);
-  let urlBackground;
-  try {
-    urlBackground = await API.cityBackgroundImage(city);
-  } catch (error) {
-    urlBackground = await API.getDefaultCityImage(weather[0].description);
-  }
+  const urlBackground = await API.cityBackgroundImage(city);
 
   return {
     city,
