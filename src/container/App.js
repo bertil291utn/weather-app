@@ -3,27 +3,58 @@ import '../styles/style.scss';
 import mainPage from '../pages/background';
 import dataComponent from '../components/dataComp';
 import searchComponent from '../components/search';
+import API from '../controller/api';
 
-const App = () => {
-  const main = document.createElement('main');
-  main.setAttribute('id', 'main');
+const apiResponse = async () => {
+  const { city, location } = await API.getDataByIpCheck();
+  const { main, weather, wind, clouds } = await API.weatherDataByCity(city);
+  let urlBackground;
+  try {
+    urlBackground = await API.cityBackgroundImage(city);
+  } catch (error) {
+    urlBackground = await API.getDefaultCityImage(weather[0].description);
+  }
 
-  main.innerHTML = mainPage(
+  return {
+    city,
+    clouds,
+    location,
+    main,
+    urlBackground,
+    weather,
+    wind,
+  };
+};
+
+const App = async () => {
+  const mainElement = document.createElement('main');
+
+  const {
+    city,
+    clouds,
+    location,
+    main,
+    urlBackground,
+    weather,
+    wind,
+  } = await apiResponse();
+  mainElement.innerHTML = mainPage(
     dataComponent.dataRender({
-      cityName: 'Los Angeles',
-      iconSrc: '04d',
-      stationName: 'Sunny',
-      degrees: '78',
-      cloudiness: '30',
-      humidity: '16',
-      wind: '30',
+      cityName: city,
+      countryFlag: location.country_flag,
+      iconSrc: weather[0].icon,
+      stationName: weather[0].description,
+      degrees: main.temp,
+      cloudiness: clouds.all,
+      humidity: main.humidity,
+      wind: wind.speed,
     }),
     searchComponent.searchInputRender(),
-    'few-clouds'
+    weather[0].description,
+    urlBackground
   );
- 
 
-  return main;
+  return mainElement;
 };
 
 export default App;

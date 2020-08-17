@@ -24,16 +24,20 @@ const dataComponent = (() => {
 
   const dataRender = ({
     cityName,
+    cloudiness,
+    countryFlag,
+    degrees,
+    humidity,
     iconSrc,
     stationName,
-    degrees,
-    cloudiness,
-    humidity,
     wind,
   }) => `
   <div class="data-content">
     <div class="weather-city">
-      <p class="title">${cityName}</p>
+      <div class="place">
+        <p class="title">${cityName}</p>
+        <img src="${countryFlag}" alt="country flag" width="50">
+      </div>
       <div class="weather-content">
         <div class="weather-data">
           <div class="date" id="display-date">${displayDate()}</div>
@@ -58,7 +62,7 @@ const dataComponent = (() => {
         </div>
         <div class="humidity">Humidity <p>${humidity}%</p>
         </div>
-        <div class="wind">Wind <p>${wind}m/s</p>
+        <div class="wind">Wind <p>${wind} m/s</p>
         </div>
       </div>
     </div>
