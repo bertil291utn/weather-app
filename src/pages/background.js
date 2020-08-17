@@ -1,20 +1,15 @@
-const sanitizeNames = (name) => name.trim().toLowerCase().replace(/\s/g, '-');
-
 const displayWeatherString = (stringWeather) => {
   switch (stringWeather) {
-    case 'clear sky':
+    case 'Clear':
       return 'sunny';
-    case 'scattered clouds':
-    case 'broken clouds':
+    case 'Rain':
       return 'raining';
-    case 'rain':
-      return 'raining';
-    case 'thunderstorm':
-    case 'snow':
+    case 'Thunderstorm':
+    case 'Snow':
     case 'mist':
       return 'shower-rain';
     default:
-      return sanitizeNames(stringWeather);
+      return 'few-clouds';
   }
 };
 

@@ -14,36 +14,46 @@ const searchComponent = (() => {
     </div>
   </div>
 `;
+  const renderPageAfterSearch = async (mainElement, searchInput) => {
+    const { main, weather, wind, clouds, sys } = await API.weatherDataByCity(
+      searchInput.value
+    );
+    const urlBackground = await API.cityBackgroundImage(searchInput.value);
 
+    mainElement.innerHTML = mainPage(
+      dataComponent.dataRender({
+        cityName: searchInput.value,
+        countryFlag: `https://www.countryflags.io/${sys.country}/flat/64.png`,
+        iconSrc: weather[0].icon,
+        stationName: weather[0].description,
+        degrees: Math.round(main.temp),
+        cloudiness: clouds.all,
+        humidity: main.humidity,
+        wind: wind.speed,
+      }),
+      searchComponent.searchInputRender(),
+      weather[0].main,
+      urlBackground
+    );
+    searchInput.value = '';
+    searchComponent.afterRender();
+    dataComponent.afterRender();
+  };
   const afterRender = () => {
     const searchButton = document.querySelector('#search-button');
     const searchInput = document.querySelector('#search-input');
     const mainElement = document.querySelector('main');
 
-    searchButton.addEventListener('click', async () => {
-      const { main, weather, wind, clouds,sys } = await API.weatherDataByCity(
-        searchInput.value
-      );
-      const urlBackground = await API.cityBackgroundImage(searchInput.value);
+    searchButton.addEventListener('click', () => {
+      renderPageAfterSearch(mainElement, searchInput);
+    });
 
-      mainElement.innerHTML = mainPage(
-        dataComponent.dataRender({
-          cityName: searchInput.value,
-          countryFlag: `https://www.countryflags.io/${sys.country}/flat/64.png`,
-          iconSrc: weather[0].icon,
-          stationName: weather[0].description,
-          degrees: Math.round(main.temp),
-          cloudiness: clouds.all,
-          humidity: main.humidity,
-          wind: wind.speed,
-        }),
-        searchComponent.searchInputRender(),
-        weather[0].description,
-        urlBackground
-      );
-      searchInput.value = '';
-      afterRender();
-      dataComponent.afterRender();
+    searchInput.addEventListener('keyup', (event) => {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        // searchButton.click();
+        renderPageAfterSearch(mainElement, searchInput);
+      }
     });
   };
 

@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import 'css-reset-and-normalize';
 import '../styles/style.scss';
 import mainPage from '../pages/background';
@@ -45,7 +46,7 @@ const App = async () => {
       wind: wind.speed,
     }),
     searchComponent.searchInputRender(),
-    weather[0].description,
+    weather[0].main,
     urlBackground
   );
 
