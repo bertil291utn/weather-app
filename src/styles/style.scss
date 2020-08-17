@@ -41,15 +41,17 @@ body {
   }
 }
 
+.city-image {
+  height: 15vw;
+}
+
 .card-container {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 3fr 0.5fr;
 }
 
 .card-content {
   font-weight: 500;
-  padding: 20vh 10rem;
+  padding: 1vw 30vw;
 }
 
 .place {
@@ -88,6 +90,17 @@ hr {
   border: 0.1px solid;
 }
 
+.icon {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+
+  img {
+    border-radius: 50%;
+    margin-right: 2vw;
+  }
+}
+
 #raining {
   &::before {
     background: $raining-deg-color;
@@ -114,6 +127,12 @@ hr {
 
   .inactive {
     color: $raining-input-text-color;
+  }
+
+  .icon {
+    img {
+      background-color: $raining-text-color;
+    }
   }
 }
 
@@ -144,6 +163,12 @@ hr {
   .inactive {
     color: $sunny-input-text-color;
   }
+
+  .icon {
+    img {
+      background-color: $sunny-text-color;
+    }
+  }
 }
 
 #few-clouds {
@@ -172,6 +197,12 @@ hr {
 
   .inactive {
     color: $few-clouds-input-text-color;
+  }
+
+  .icon {
+    img {
+      background-color: $few-clouds-text-color;
+    }
   }
 }
 
@@ -202,10 +233,18 @@ hr {
   .inactive {
     color: $shower-rain-input-text-color;
   }
+
+  .icon {
+    img {
+      background-color: $shower-rain-text-color;
+    }
+  }
 }
 
 .input {
-  margin: 2rem auto;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 5vw;
 }
 
 .input-container {
@@ -268,28 +307,28 @@ hr {
   }
 }
 
-.icon {
-  display: flex;
-  align-items: center;
-  margin: 1rem 0;
-}
-
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 1024px) {
   .card-content {
-    padding: 20vh 5vh;
+    padding: 5vw 5vw;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 860px) {
   .card-container {
-    display: flex;
-    flex-direction: column-reverse;
+  }
+
+  .card {
+    display: block;
   }
 
   .weather-content {
     height: 15vw;
+  }
+
+  .card-content {
+    padding: 5vh;
   }
 }
 

@@ -19,15 +19,15 @@ const displayWeatherString = (stringWeather) => {
 };
 
 const mainPage = (dataComponent, searchComponent, time, urlBackground) => `
-  <div class="card" id="${displayWeatherString(
-    time
-  )}" style="background: url(${urlBackground}) no-repeat center center fixed;">
+  <div class="card" id="${displayWeatherString(time)}" >
     <div class="card-container">
-      <div></div>
+      <div class="city-image" style="background: url(${urlBackground}) center/cover">
+        ${searchComponent}
+      </div>
       <div class="card-content">
         ${dataComponent}
       </div>
-      ${searchComponent}
+   
     </div>
   </div>
 `;
