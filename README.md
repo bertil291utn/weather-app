@@ -24,7 +24,7 @@
 [:globe_with_meridians::computer:](http://weather.bertiltandayamo.me/)
 
 
-### Usage
+## Usage
 - Clone the [project 📝](https://github.com/bertil291utn/weather-app.git)
 - Install all dependencies `npm i`
 - Get all your APIs and add it to `.env` file
@@ -48,7 +48,7 @@ Deployed on [GitHub Pages](https://pages.github.com/)
 - LinkedIn: [Bertil Tandayamo](http://bit.ly/bertil_linkedin)
 
 
-## Acknowledgement
+## Acknowledgment
 
 Inspired design by K SHWETA KUMARI on [Behance](https://www.behance.net/gallery/101649625/Weather-App?tracking_source=search_projects_recommended%7Cweather%20web)  
 Inspired design by Martyna Zielińska on [Dribbble](https://dribbble.com/shots/6854496-Travel-app)  
