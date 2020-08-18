@@ -23,8 +23,7 @@ const imagesRules = {
   use: ['file-loader'],
 };
 
-module.exports = {
-  mode: 'development',
+const config = {
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
     filename: 'main.js',
@@ -34,11 +33,17 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebPackPlugin({
       template: './public/index.html',
       filename: './index.html',
     }),
     new Dotenv(),
   ],
+};
+
+module.exports = (env, argv) => {
+  if (argv.mode === 'production') {
+    config.plugins.push(new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }));
+  }
+  return config;
 };
