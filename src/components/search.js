@@ -53,7 +53,6 @@ const searchComponent = (() => {
     searchInput.addEventListener('keyup', (event) => {
       if (event.keyCode === 13) {
         event.preventDefault();
-        // searchButton.click();
         renderPageAfterSearch(mainElement, searchInput);
       }
     });
