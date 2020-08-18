@@ -24,7 +24,7 @@
 [:globe_with_meridians::computer:](http://weather.bertiltandayamo.me/)
 
 
-### Usage
+## Usage
 - Clone the [project 📝](https://github.com/bertil291utn/weather-app.git)
 - Install all dependencies `npm i`
 - Get all your APIs and add it to `.env` file
