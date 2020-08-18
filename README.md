@@ -4,7 +4,7 @@
 
 <div align="center"><img src="https://user-images.githubusercontent.com/24902525/90455284-5357f180-e0bb-11ea-9c14-6132f944294c.gif" alt="image" width="900" /></div>
 
-**Note:** Not recommendable use for smartphones yet
+**Note:** Not recommendable for smartphones yet
 
 ## Built With 
 
