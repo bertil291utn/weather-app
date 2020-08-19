@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 const displayWeatherString = (stringWeather) => {
   switch (stringWeather) {
     case 'Clear':
