@@ -13,7 +13,13 @@ const displayWeatherString = (stringWeather) => {
   }
 };
 
-const mainPage = (dataComponent, searchComponent, time, urlBackground) => `
+const mainPage = (
+  dataComponent,
+  searchComponent,
+  cityNotFoundComponent,
+  time,
+  urlBackground
+) => `
   <div class="card" id="${displayWeatherString(time)}" >
     <div class="card-container">
       <div class="city-image" style="background: url(${urlBackground}) center/cover">
@@ -22,8 +28,8 @@ const mainPage = (dataComponent, searchComponent, time, urlBackground) => `
       <div class="card-content">
         ${dataComponent}
       </div>
-   
     </div>
+    ${cityNotFoundComponent}
   </div>
 `;
 

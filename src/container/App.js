@@ -6,11 +6,17 @@ import mainPage from '../pages/background';
 import dataComponent from '../components/dataComp';
 import searchComponent from '../components/search';
 import API from '../controller/api';
+import cityNotFoundComponent from '../components/city-not-found';
 
 const apiResponse = async () => {
   const { city, location } = await API.getDataByIpCheck();
-  const { main, weather, wind, clouds } = await API.weatherDataByCity(city);
-  const urlBackground = await API.cityBackgroundImage(city);
+  const returnCityData = await Promise.all([
+    API.weatherDataByCity(city),
+    API.cityBackgroundImage(city),
+  ]);
+
+  const { main, weather, wind, clouds } = await returnCityData[0];
+  const urlBackground = await returnCityData[1];
 
   return {
     city,
@@ -47,6 +53,7 @@ const App = async () => {
       wind: wind.speed,
     }),
     searchComponent.searchInputRender(),
+    cityNotFoundComponent.cityNotFoundRenderPage(),
     weather[0].main,
     urlBackground
   );

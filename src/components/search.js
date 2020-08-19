@@ -4,6 +4,7 @@ import IconSvg from '../assets/icons.svg';
 import API from '../controller/api';
 import mainPage from '../pages/background';
 import dataComponent from './dataComp';
+import cityNotFoundComponent from './city-not-found';
 
 const searchComponent = (() => {
   const searchInputRender = () => `
@@ -17,30 +18,44 @@ const searchComponent = (() => {
   </div>
 `;
   const renderPageAfterSearch = async (mainElement, searchInput) => {
-    const { main, weather, wind, clouds, sys } = await API.weatherDataByCity(
-      searchInput.value
-    );
-    const urlBackground = await API.cityBackgroundImage(searchInput.value);
+    const cityPage = document.querySelector('.city-not-found');
+    const cardContainer = document.querySelector('.card-container');
+    try {
+      const returnCityData = await Promise.all([
+        API.weatherDataByCity(searchInput.value),
+        API.cityBackgroundImage(searchInput.value),
+      ]);
 
-    mainElement.innerHTML = mainPage(
-      dataComponent.dataRender({
-        cityName: searchInput.value,
-        countryFlag: `https://www.countryflags.io/${sys.country}/flat/64.png`,
-        iconSrc: weather[0].icon,
-        stationName: weather[0].description,
-        degrees: Math.round(main.temp),
-        cloudiness: clouds.all,
-        humidity: main.humidity,
-        wind: wind.speed,
-      }),
-      searchComponent.searchInputRender(),
-      weather[0].main,
-      urlBackground
-    );
-    searchInput.value = '';
-    searchComponent.afterRender();
-    dataComponent.afterRender();
+      const { main, weather, wind, clouds, sys } = await returnCityData[0];
+      const urlBackground = await returnCityData[1];
+
+      mainElement.innerHTML = mainPage(
+        dataComponent.dataRender({
+          cityName: searchInput.value,
+          countryFlag: `https://www.countryflags.io/${sys.country}/flat/64.png`,
+          iconSrc: weather[0].icon,
+          stationName: weather[0].description,
+          degrees: Math.round(main.temp),
+          cloudiness: clouds.all,
+          humidity: main.humidity,
+          wind: wind.speed,
+        }),
+        searchComponent.searchInputRender(),
+        cityNotFoundComponent.cityNotFoundRenderPage(),
+        weather[0].main,
+        urlBackground
+      );
+      searchInput.value = '';
+      searchComponent.afterRender();
+      dataComponent.afterRender();
+      cityNotFoundComponent.afterRender();
+    } catch (error) {
+      cityPage.classList.remove('d-none');
+      cardContainer.classList.add('d-none');
+      searchInput.value = '';
+    }
   };
+
   const afterRender = () => {
     const searchButton = document.querySelector('#search-button');
     const searchInput = document.querySelector('#search-input');
