@@ -1,0 +1,409 @@
+/* stylelint-disable csstree/validator */
+/* stylelint-disable declaration-colon-newline-after */
+@import 'font-color';
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  font: {
+    family: 'Poppins', sans-serif;
+    weight: 300;
+  }
+}
+
+.title {
+  font: {
+    size: 2.25rem;
+  }
+
+  margin: 1rem 0;
+}
+
+.subtitle {
+  font: {
+    weight: 600;
+    size: 2rem;
+  }
+}
+
+.d-none {
+  display: none !important;
+}
+
+/* CARD DATA */
+
+.card {
+  height: 100vh;
+  display: grid;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+  }
+}
+
+.city-image {
+  height: 15vw;
+}
+
+.card-container {
+  position: relative;
+}
+
+.card-content {
+  font-weight: 500;
+  padding: 1vw 30vw;
+}
+
+.place {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .title {
+    text-transform: capitalize;
+  }
+}
+
+.svg-icon {
+  cursor: pointer;
+  height: 1rem;
+  margin-right: 0.5rem;
+  position: relative;
+  right: 1.5rem;
+  width: 1rem;
+}
+
+.input input {
+  border-radius: 1rem;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  height: 2rem;
+  letter-spacing: 0.09rem;
+  padding: 0.25rem 1rem;
+  text-transform: capitalize;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+hr {
+  border: 0.1px solid;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+
+  img {
+    border-radius: 50%;
+    margin-right: 2vw;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 1rem;
+  border: 0;
+  padding: 1rem 10rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* CARDS-ACCORDING-TO-WEATHER */
+
+#raining {
+  &::before {
+    background: $raining-deg-color;
+  }
+
+  color: $raining-text-color;
+
+  .svg-icon {
+    fill: $raining-input-text-color;
+  }
+
+  .input input {
+    background-color: $raining-solid-bg-color;
+    color: $raining-input-text-color;
+
+    &::placeholder {
+      color: $raining-input-text-color;
+    }
+  }
+
+  hr {
+    border-color: $raining-text-color;
+  }
+
+  .inactive {
+    color: $raining-input-text-color;
+  }
+
+  .icon {
+    img {
+      background-color: $raining-text-color;
+    }
+  }
+
+  .btn {
+    &.primary {
+      background-color: $raining-solid-bg-color;
+      color: $raining-text-color;
+    }
+  }
+}
+
+#sunny {
+  &::before {
+    background: $sunny-deg-color;
+  }
+
+  color: $sunny-text-color;
+
+  .svg-icon {
+    fill: $sunny-input-text-color;
+  }
+
+  .input input {
+    background-color: $sunny-solid-bg-color;
+    color: $sunny-input-text-color;
+
+    &::placeholder {
+      color: $sunny-input-text-color;
+    }
+  }
+
+  hr {
+    border-color: $sunny-text-color;
+  }
+
+  .inactive {
+    color: $sunny-input-text-color;
+  }
+
+  .icon {
+    img {
+      background-color: $sunny-text-color;
+    }
+  }
+
+  .btn {
+    &.primary {
+      background-color: $sunny-solid-bg-color;
+      color: $sunny-text-color;
+    }
+  }
+}
+
+#few-clouds {
+  &::before {
+    background: $few-clouds-deg-color;
+  }
+
+  color: $few-clouds-text-color;
+
+  .svg-icon {
+    fill: $few-clouds-input-text-color;
+  }
+
+  .input input {
+    background-color: $few-clouds-solid-bg-color;
+    color: $few-clouds-input-text-color;
+
+    &::placeholder {
+      color: $few-clouds-input-text-color;
+    }
+  }
+
+  hr {
+    border-color: $few-clouds-text-color;
+  }
+
+  .inactive {
+    color: $few-clouds-input-text-color;
+  }
+
+  .icon {
+    img {
+      background-color: $few-clouds-text-color;
+    }
+  }
+
+  .btn {
+    &.primary {
+      background-color: $few-clouds-solid-bg-color;
+      color: $few-clouds-text-color;
+    }
+  }
+}
+
+#shower-rain {
+  &::before {
+    background: $shower-rain-deg-color;
+  }
+
+  color: $shower-rain-text-color;
+
+  .svg-icon {
+    fill: $shower-rain-input-text-color;
+  }
+
+  .input input {
+    background-color: $shower-rain-solid-bg-color;
+    color: $shower-rain-input-text-color;
+
+    &::placeholder {
+      color: $shower-rain-input-text-color;
+    }
+  }
+
+  hr {
+    border-color: $shower-rain-text-color;
+  }
+
+  .inactive {
+    color: $shower-rain-input-text-color;
+  }
+
+  .icon {
+    img {
+      background-color: $shower-rain-text-color;
+    }
+  }
+
+  .btn {
+    &.primary {
+      background-color: $shower-rain-solid-bg-color;
+      color: $shower-rain-text-color;
+    }
+  }
+}
+
+.input {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 5vw;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.weather-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 7vw;
+  margin: 2rem 0;
+}
+
+.weather-data {
+  margin-top: 1rem;
+
+  .date {
+    font-size: 0.9rem;
+  }
+
+  .weather-station {
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+}
+
+.degrees-container {
+  text-align: right;
+
+  span {
+    cursor: pointer;
+  }
+}
+
+.degrees {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.additional-info {
+  margin-top: 2rem;
+
+  h3 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+  }
+}
+
+.additional-info-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+
+  p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+}
+
+/* CITY-NOT-FOUND */
+
+.city-not-found {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .city-not-found-container {
+    width: 100%;
+    text-align: center;
+
+    .city-not-found-content {
+      h3 {
+        margin-bottom: 3rem;
+      }
+
+      p {
+        margin-bottom: 5rem;
+      }
+    }
+  }
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1024px) {
+  .card-content {
+    padding: 5vw 5vw;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .card {
+    display: block;
+  }
+
+  .weather-content {
+    height: 15vw;
+  }
+
+  .card-content {
+    padding: 5vh;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .weather-content {
+    height: 20vw;
+  }
+}
