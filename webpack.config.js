@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const javascriptRules = {
   test: /\.m?js$/,
@@ -13,8 +14,8 @@ const javascriptRules = {
 };
 
 const cssRules = {
-  test: /\.css$/,
-  use: ['style-loader', 'css-loader'],
+  test: /\.s[ac]ss|\.css$/i,
+  use: ['style-loader', 'css-loader', 'sass-loader'],
 };
 
 const imagesRules = {
@@ -22,20 +23,27 @@ const imagesRules = {
   use: ['file-loader'],
 };
 
-module.exports = {
-  mode: 'development',
+const config = {
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     filename: 'main.js',
   },
   module: {
-    rules: [cssRules, imagesRules, javascriptRules],
+    rules: [cssRules, javascriptRules, imagesRules],
   },
   devtool: 'inline-source-map',
   plugins: [
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebPackPlugin({
       template: './public/index.html',
       filename: './index.html',
     }),
+    new Dotenv(),
   ],
+};
+
+module.exports = (env, argv) => {
+  if (argv.mode === 'production') {
+    config.plugins.push(new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }));
+  }
+  return config;
 };
