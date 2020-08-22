@@ -198,6 +198,13 @@ hr {
       background-color: $sunny-text-color;
     }
   }
+
+  .btn {
+    &.primary {
+      background-color: $sunny-solid-bg-color;
+      color: $sunny-text-color;
+    }
+  }
 }
 
 #few-clouds {
@@ -233,6 +240,13 @@ hr {
       background-color: $few-clouds-text-color;
     }
   }
+
+  .btn {
+    &.primary {
+      background-color: $few-clouds-solid-bg-color;
+      color: $few-clouds-text-color;
+    }
+  }
 }
 
 #shower-rain {
@@ -266,6 +280,13 @@ hr {
   .icon {
     img {
       background-color: $shower-rain-text-color;
+    }
+  }
+
+  .btn {
+    &.primary {
+      background-color: $shower-rain-solid-bg-color;
+      color: $shower-rain-text-color;
     }
   }
 }
