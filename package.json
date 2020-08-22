@@ -5,9 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack --progress -p --mode production",
-    "deploy":"git subtree push --prefix '${npm_config_folder}'||dist origin gh-pages",
-    "force_deploy":"git push origin `git subtree split --prefix '${npm_config_folder}'||dist '${npm_config_branch}'||master`:gh-pages --force",
     "build:dev": "webpack --mode development",
+    "deploy":"npm run build && git subtree push --prefix ${FOLDER:-dist} origin gh-pages",
     "scss": "node-sass --watch layout/scss -o layout/css",
     "start": "webpack-dev-server --open"
   },
