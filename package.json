@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --progress -p --mode production",
     "build:dev": "webpack --mode development",
-    "deploy":"npm run build && git subtree push --prefix dist origin gh-pages",
+    "deploy": "npm run build && git subtree push --prefix dist origin gh-pages",
     "scss": "node-sass --watch layout/scss -o layout/css",
     "start": "webpack-dev-server --open"
   },
