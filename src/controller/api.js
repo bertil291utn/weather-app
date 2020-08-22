@@ -16,7 +16,7 @@ const API = (() => {
 
   const sanitizeNames = (name) => name.trim().toLowerCase().replace(/\s/g, '-');
 
-  const getDefaultImage = () => process.env.DEFAULT_IMAGE;
+  const getDefaultImage = () => 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1113&q=80';
 
   const cityBackgroundImage = async (cityName) => {
     try {

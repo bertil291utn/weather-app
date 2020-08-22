@@ -16,7 +16,6 @@
 - Open weather map [API](http://api.openweathermap.org)
 - Ip Stack get current location by IP [API](http://api.ipstack.com)
 - Teleport for city images [API](https://api.teleport.org/api/urban_areas/slug:san-francisco/images)
-- Country flag  [service](https://www.countryflags.io/EC/flat/64.png)
 
 
 ## Live Demo
@@ -24,12 +23,13 @@
 [:globe_with_meridians::computer:](http://weather.bertiltandayamo.me/)
 
 
-## Usage
+## Install
 - Clone the [project 📝](https://github.com/bertil291utn/weather-app.git)
 - Install all dependencies `npm i`
-- Get all your APIs and add it to `.env` file
-- Enter the city name
-
+- Create an account to get all the APIs (Open weather map [API](https://home.openweathermap.org/api_keys) and Ip Stack [API](https://ipstack.com/product))
+ - Create a `.env` file in the root project directory
+ - Create `API_KEY_IPSTACK=`*`YOUR_API_KEY`* and `API_KEY_OPENWEATHERMAP=`*`YOUR_API_KEY`* variables
+ - Run `npm run start` to check locally
 ## Deployed on GitHub pages
 
 Deployed on [GitHub Pages](https://pages.github.com/)  
